@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 
 export const metadata = {
-  title: "Promptopia",
+  title: "PromptShareApp",
   description: "Discover & Share AI Prompts",
 };
 
