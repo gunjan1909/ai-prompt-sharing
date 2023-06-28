@@ -1,4 +1,4 @@
-//UserSchema
+// This is schema model for users databse, to save the detail of registered user
 
 import { Schema, model, models } from "mongoose";
 

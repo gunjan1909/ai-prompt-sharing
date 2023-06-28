@@ -1,3 +1,5 @@
+// This file has the code for the function connectToDB() which is used for connecting to the database via mongoose client
+
 import mongoose, { mongo } from "mongoose";
 
 let isConnected = false;
