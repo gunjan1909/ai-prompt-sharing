@@ -10,7 +10,8 @@ const Home = () => {
       </h1>
       <p className="desc text-center">
         This is an open-source AI prompting tool to discover, create and share
-        AI prompts.
+        AI prompts that can be used in LLM's(eg: ChatGPT) or Prompt Engineering.
+        Get prompts examples if learning Prompt Engineering.
       </p>
       {/* Feed component */}
       <Feed />

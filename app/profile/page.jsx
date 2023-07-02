@@ -1,5 +1,5 @@
 "use client";
-
+// page showed on /profile url, shows the profile component along with 'MY' prompts with edit delete function
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -22,6 +22,7 @@ const MyProfile = () => {
     if (session?.user.id) fetchPosts();
   }, [
     //added by myself for refetching the data once page reload or revisit
+    // because it was not showing when page reloads
     session,
   ]);
 

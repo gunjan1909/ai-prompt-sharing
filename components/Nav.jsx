@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 
+//the navbar, signin singout implementd..nextauth using google authentication
 const Nav = () => {
   const { data: session } = useSession();
   const [providers, setProviders] = useState(null);
@@ -13,7 +14,8 @@ const Nav = () => {
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders();
-      //console.log(response);
+      //the provider handler object in route.js in /api/auth/
+      console.log(response);
       setProviders(response);
     };
     setUpProviders();
@@ -21,6 +23,7 @@ const Nav = () => {
 
   return (
     <nav className="flex-between w-full mb-16 pt-3">
+      {/* LOGO */}
       <Link href="/" className="flex gap-2 flex-center">
         <Image
           width={30}
@@ -33,6 +36,7 @@ const Nav = () => {
       </Link>
       {/* Desktop Navigation */}
       <div className="sm:flex hidden">
+        {/* IF USER IS LOGGED IN, SIGNOUT AND BUTTON TO GO TO CREATE-PROMPT PAGE IS DISPLAYED */}
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt" className="black_btn">
@@ -53,6 +57,10 @@ const Nav = () => {
           </div>
         ) : (
           <>
+            {/* So, in summary, the code dynamically renders sign-in buttons for */}
+            {/* each available authentication provider, allowing users to choose and */}
+            {/* sign in with their preferred provider.Here we have only 1 provider(google auth) */}
+
             {providers &&
               Object.values(providers).map((provider) => (
                 <button

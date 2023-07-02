@@ -3,6 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import User from "@models/User";
 import { connectToDB } from "@utils/database";
 
+//NEXT AUTH DOCS NEEDS TO BE CHECKED TBH
 const handler = NextAuth({
   providers: [
     GoogleProvider({

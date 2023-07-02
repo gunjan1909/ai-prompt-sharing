@@ -1,5 +1,6 @@
 "use client";
 
+//page for create-prompt url, returns a form to create prompt
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";

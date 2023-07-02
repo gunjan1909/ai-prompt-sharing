@@ -43,6 +43,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - `/styles/` - The Next.js styles directory
 - `/components/` - The reusable UI components with some logic
 - `/utils/` - Just some utility functions like connectToDB to call to connect to the MongoDB database
+- '/models/` - Schema models for database
 
 ## Environment Variables:
 
