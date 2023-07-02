@@ -1,7 +1,7 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
-//get all posts of particular creator
+//get all posts/prompts of particular creator
 export const GET = async (req, { params }) => {
   try {
     await connectToDB();
