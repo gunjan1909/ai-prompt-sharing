@@ -1,6 +1,8 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
+//BACKEND API FOR GET, UPDATE/PATCH AND DELETE ANY SPECIFIC PROMPT/POST
+
 // GET a specific prompt
 export const GET = async (req, { params }) => {
   try {

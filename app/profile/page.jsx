@@ -1,5 +1,7 @@
 "use client";
+
 // page showed on /profile url, shows the profile component along with 'MY' prompts with edit delete function
+
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -27,16 +29,34 @@ const MyProfile = () => {
     session,
   ]);
 
+  //sends the user to update prompt page ie localhost:3000/update-prompt?id=
   const handleEdit = (post) => {
     router.push(`/update-prompt?id=${post._id}`);
   };
 
-  const handleDelete = async (post) => {};
+  //delete the post/prompt the data, and also update the posts array in the frontend as well
+  const handleDelete = async (post) => {
+    //confirm prompt built-in the browser
+    const hasConfirmed = confirm(
+      "Are you sure you want to delete this prompt?"
+    );
+    if (hasConfirmed) {
+      try {
+        await fetch(`/api/prompt/${post._id.toString()}`, {
+          method: "DELETE",
+        });
+        const filteredPosts = posts.filter((p) => p._id !== post._id);
+        setPosts(filteredPosts);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+  };
 
   return (
     <Profile
       name="My"
-      desc="Welcome to your profile page"
+      desc="Welcome to your profile page. Share your prompts with others to utilise the power of AI using your prompts."
       data={posts}
       handleEdit={handleEdit}
       handleDelete={handleDelete}

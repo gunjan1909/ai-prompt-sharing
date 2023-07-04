@@ -1,6 +1,7 @@
 "use client";
 
 //page for create-prompt url, returns a form to create prompt
+
 import { useSession } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -10,6 +11,7 @@ import Form from "@components/Form";
 const CreatePrompt = () => {
   const router = useRouter();
   const { data: session } = useSession();
+
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({
     prompt: "",

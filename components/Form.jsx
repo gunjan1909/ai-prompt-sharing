@@ -7,7 +7,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
     <section className="w-full max-w-full flex-start flex-col">
       <h1 className="head_text text-left">
         {/* type- create, edit/update etc. */}
-        <span className="blue_gradient">{type} Post</span>
+        <span className="blue_gradient">{type} Prompt/Post</span>
       </h1>
       <p className="desc text-left max-w-md">
         {type} and share amazing AI prompts with everyone to use on any

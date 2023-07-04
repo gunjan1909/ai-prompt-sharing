@@ -1,9 +1,10 @@
 import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
+
 import User from "@models/User";
 import { connectToDB } from "@utils/database";
 
-//NEXT AUTH DOCS NEEDS TO BE CHECKED TBH
+//NEXT AUTH DOCS NEEDS TO BE CHECKED TBH, BACKEND CODE FOR NEXT AUTH LOGIN SIGNUP, USING GOOGLEPROVIDER AS THE PROVIDER, THERE CAN BE MORE
 const handler = NextAuth({
   providers: [
     GoogleProvider({

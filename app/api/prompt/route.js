@@ -1,7 +1,8 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
-//get all posts backend api route
+//backend api post to get all posts/prompts
+
 export const GET = async (req) => {
   try {
     await connectToDB();

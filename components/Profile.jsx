@@ -1,4 +1,3 @@
-import React from "react";
 import PromptCard from "./PromptCard";
 
 //Profile page component that will show My Profile as well as other user's profile and their prompts(PromptCard component) along with ability to delete and edit the prompts if your profile.

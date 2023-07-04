@@ -4,18 +4,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 //the navbar, signin singout implementd..nextauth using google authentication
 const Nav = () => {
   const { data: session } = useSession();
+  const router = useRouter();
+
   const [providers, setProviders] = useState(null);
   const [toggleDropodown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders();
-      //the provider handler object in route.js in /api/auth/
-      console.log(response);
+      //this is the provider handler object in route.js in /api/auth/
+      //console.log(response);
       setProviders(response);
     };
     setUpProviders();
@@ -42,6 +45,7 @@ const Nav = () => {
             <Link href="/create-prompt" className="black_btn">
               Create Post
             </Link>
+
             <button type="button" onClick={signOut} className="outline_btn">
               Sign Out
             </button>
