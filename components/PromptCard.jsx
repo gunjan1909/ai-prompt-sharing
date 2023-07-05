@@ -7,13 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 //component for the single card with prompts, showing username, email, prompt(can be copied), tag and delete and edit button according to the conditions
 
-const PromptCard = ({
-  key,
-  post,
-  handleTagClick,
-  handleEdit,
-  handleDelete,
-}) => {
+const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
   const router = useRouter();
@@ -48,8 +42,10 @@ const PromptCard = ({
   const handleProfileClick = () => {
     //console.log(post);
 
+    //my profile page
     if (post.creator._id === session?.user.id) return router.push("/profile");
 
+    // or other's profile page
     router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
   };
 
@@ -82,7 +78,7 @@ const PromptCard = ({
             src={
               copied === post.prompt
                 ? "/assets/icons/tick.svg"
-                : "assets/icons/copy.svg"
+                : "/assets/icons/copy.svg"
             }
             alt={copied === post.prompt ? "copied" : "copy"}
             width={12}

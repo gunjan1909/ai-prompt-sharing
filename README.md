@@ -38,12 +38,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Project Structure:
 
 - `/app/` - The Next.js app that have respective pages in respective folder(NextJs has folder based routing, pathname in url will be the folder name and accordingly the page will be rendered)
-- `/app/api/` - The Next.js API routes/backend
+  - `/app/api/` - The Next.js API routes/backend
+  - `/app/folder/` - Folder based routing, pages for respective routes(folder names)
+- `/components/` - The reusable UI components with some logic
+- '/models/` - Schema models for database
 - `/public/` - The Next.js public directory
 - `/styles/` - The Next.js styles directory
-- `/components/` - The reusable UI components with some logic
 - `/utils/` - Just some utility functions like connectToDB to call to connect to the MongoDB database
-- '/models/` - Schema models for database
 
 ## Environment Variables:
 

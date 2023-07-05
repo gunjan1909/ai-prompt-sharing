@@ -2,6 +2,7 @@ import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
 //backend api route to get all posts/prompts of particular creator, dynamic(takes parameters)
+
 export const GET = async (req, { params }) => {
   try {
     await connectToDB();

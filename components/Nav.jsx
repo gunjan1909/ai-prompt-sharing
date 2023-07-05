@@ -7,6 +7,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 //the navbar, signin singout implementd..nextauth using google authentication
+
 const Nav = () => {
   const { data: session } = useSession();
   const router = useRouter();

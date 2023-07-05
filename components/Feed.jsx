@@ -9,7 +9,11 @@ const PromptCardList = ({ data, handleTagClick }) => {
   return (
     <div className="mt-16 prompt_layout">
       {data.map((post) => (
-        <PromptCard key={post.id} post={post} handleTagClick={handleTagClick} />
+        <PromptCard
+          key={post._id}
+          post={post}
+          handleTagClick={handleTagClick}
+        />
       ))}
     </div>
   );
@@ -20,9 +24,9 @@ const Feed = () => {
   const [posts, setPosts] = useState([]);
 
   // Search states
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState(""); //text in inupt field
   const [searchTimeout, setSearchTimeout] = useState(null);
-  const [searchedResults, setSearchedResults] = useState([]);
+  const [searchedResults, setSearchedResults] = useState([]); //array of results on search
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -44,14 +48,21 @@ const Feed = () => {
     );
   };
 
+  //The handleSearchChange function in the Feed component is responsible for managing the search functionality.
+  //It updates the search text state based on user input, clears any existing search timeout, and sets a new timeout to delay the search execution.
   const handleSearchChange = (e) => {
+    //It first clears any existing timeout by calling clearTimeout(searchTimeout). This is done to reset the debounce effect and ensure that the search function is not called too frequently while the user is still typing.
     clearTimeout(searchTimeout);
+    //It then updates the searchText state with the new value entered in the search input by calling setSearchText(e.target.value). This ensures that the search text is synchronized with the value entered by the user.
     setSearchText(e.target.value);
 
     // debounce method
+    //After updating the searchText state, it sets a new timeout using setTimeout. This creates a delay of 500 milliseconds before executing the search function.
     setSearchTimeout(
       setTimeout(() => {
+        //Inside the timeout function, it calls the filterPrompts function with the updated search text (e.target.value) to filter the prompts based on the search criteria. The filtered results are stored in the searchResult variable.
         const searchResult = filterPrompts(e.target.value);
+        //Finally, it calls setSearchedResults(searchResult) to update the searchedResults state with the filtered results obtained from the search.
         setSearchedResults(searchResult);
       }, 500)
     );

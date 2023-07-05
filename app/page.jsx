@@ -1,5 +1,6 @@
 import Feed from "@components/Feed";
 
+//Main home page, displays the heading and description and feed component
 const Home = () => {
   return (
     <section className="w-full flex-center flex-col">

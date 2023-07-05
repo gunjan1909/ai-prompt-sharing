@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 //Form component to create Post/Prompt
+
 const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
   return (
     <section className="w-full max-w-full flex-start flex-col">

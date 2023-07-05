@@ -1,4 +1,5 @@
 import "@styles/globals.css";
+import "@styles/others.css";
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 
