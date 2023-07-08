@@ -75,6 +75,8 @@ const Feed = () => {
     setSearchedResults(searchResult);
   };
 
+  //console.log(posts);
+
   return (
     <section className="feed">
       {/* form to search prompts on basis of user or tags */}

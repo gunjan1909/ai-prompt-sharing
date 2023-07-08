@@ -1,7 +1,7 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
-//backend api route to create new post
+//backend api route to create new post/prompt
 
 export const POST = async (req) => {
   const { userId, prompt, tag } = await req.json();

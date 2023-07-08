@@ -1,7 +1,7 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
-//backend api post to get all posts/prompts
+//backend api post to get all posts/prompts, used/called in Feed Component of home/main page
 
 export const GET = async (req) => {
   try {

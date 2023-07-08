@@ -70,3 +70,9 @@ NEXTAUTH_SECRET=
 - `react` - The React.js framework
 - `react-dom` - The React.js DOM renderer
 - `tailwindcss` - For styling
+
+## Deployed on Vercel
+
+- [View Deployment](https://ai-prompt-sharing-ten.vercel.app/)
+
+### Credits: [JavaScript Mastery - Adrian Hajdin](https://www.jsmastery.pro/)
