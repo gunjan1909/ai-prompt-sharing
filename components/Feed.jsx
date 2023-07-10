@@ -32,7 +32,6 @@ const Feed = () => {
     const fetchPosts = async () => {
       const res = await fetch("/api/prompt");
       const data = await res.json();
-      //console.log(data)
       setPosts(data);
     };
     fetchPosts();
@@ -74,8 +73,6 @@ const Feed = () => {
     const searchResult = filterPrompts(tagName);
     setSearchedResults(searchResult);
   };
-
-  //console.log(posts);
 
   return (
     <section className="feed">
